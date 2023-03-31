@@ -13,4 +13,14 @@
 - Create Router and handler classess
 - Now run and test application
 
+#### Handling Error 
+- Approach 1 ->
+  - Go to WebClientConfig.java class (reactive-web3) and append below code
+    ```
+     .onErrorResume(WebClientException.class,e->{
+                  Customer customer = new Customer("demo customer");
+                  return Flux.just(customer);
+              });
+    ```
+- Approach 2->
 
