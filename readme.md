@@ -38,6 +38,10 @@
     flux.doOnNext(ele-> System.out.println(ele));
     ```
   - If you observe the output Nothing will happen as we don't have subscriber. In reactive-wb3 when we were returning from controller or we were registering router spring boot was automatically creating subscriber for us.
+  - we can create the subscriber using following line.
+    ```
+    .subscribe(ele-> System.out.println("subs"+ele));
+    ```
 
 ### Creating Custom Publishers
 
