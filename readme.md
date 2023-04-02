@@ -24,3 +24,13 @@
     ```
 - Approach 2->
 
+
+### Creating Subscribers
+
+### Creating Custom Publishers
+
+### Essential Methods
+
+### Securing Reactive application
+
+### Using websockets
