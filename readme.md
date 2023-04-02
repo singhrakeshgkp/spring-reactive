@@ -37,7 +37,7 @@
     var flux = Flux.fromIterable(Set.of(2, 2, 4, 4, 3, 6, 7, 7));
     flux.doOnNext(ele-> System.out.println(ele));
     ```
-  - Nothing will happens as we don't have subscriber. In reactive-wb3 when we were returning from controller or we were registering router spring boot was automatically creating subscriber for us.
+  - If you observe the output Nothing will happen as we don't have subscriber. In reactive-wb3 when we were returning from controller or we were registering router spring boot was automatically creating subscriber for us.
 
 ### Creating Custom Publishers
 
