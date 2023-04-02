@@ -5,7 +5,7 @@
 - Create CustomerHandler class and run the application. Now test it using Chrome (it will only work with supported reactive client, as such postman is not supporting)
 
 
-### Calling reactive-web2 router from reactive-web3 application
+### Calling reactive-web2 from reactive-web3 application(router implementation)
 - Config webClient bean for reference refer ```WebClientConfig.java``` class.
 - Create ```CustomerProxy.java``` class and write the code to get the data from reactive-web2 application
 - Now consumer part is completed here.
@@ -25,7 +25,13 @@
 - Approach 2->
 
 
-### Creating Subscribers
+### Creating Subscribers Reactive-web4
+- Mono and Flux are Publishers
+  ```
+  Mono & Flux <------Subscription------Subscriber
+  ```
+- Create new spring boot application with reactive-web dependency
+- 
 
 ### Creating Custom Publishers
 
