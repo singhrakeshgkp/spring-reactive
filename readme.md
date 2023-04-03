@@ -89,6 +89,7 @@ Flux                     Subscriber
   ```
   
 ### Essential Methods
+- refer reactive-web6 applications and reference documentations.
 
 ### Securing Reactive application
 
