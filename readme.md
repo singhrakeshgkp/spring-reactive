@@ -71,6 +71,16 @@ Flux                     Subscriber
 - create a ```TestPublisher.java``` class, this class should implement Publisher class.
 - Create ```TestSubscriber, TestController, and Testsubscription``` java classess.
 - Now test application
+- Creating Flux publisher using create method-> recommended way to create Flux
+  ```
+    Flux<String> flux = Flux.create(sink->{
+            for(int i =0;i<5;i++){
+               sink.next("ele "+i);
+            }
+            sink.complete();
+        });
+        flux.subscribe(ele-> System.out.println(ele));
+  ```
 
 ### Essential Methods
 
