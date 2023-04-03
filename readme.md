@@ -71,7 +71,7 @@ Flux                     Subscriber
 - create a ```TestPublisher.java``` class, this class should implement Publisher class.
 - Create ```TestSubscriber, TestController, and Testsubscription``` java classess.
 - Now test application
-- Creating Flux publisher using create method-> recommended way to create Flux
+- Creating Flux publisher using create method-> recommended way to create Flux refer ```test2``` method of ```TestController.java``` class
   ```
     Flux<String> flux = Flux.create(sink->{
             for(int i =0;i<5;i++){
@@ -81,7 +81,11 @@ Flux                     Subscriber
         });
         flux.subscribe(ele-> System.out.println(ele));
   ```
-
+- ```flux.log``` -> To print all the action happing under hood
+  ```
+  .subscribe(ele-> System.out.println(ele)) -> this lines doesn't request data from publisher aslo its not back pressure. It simply say give me whatever you have.
+  ```
+  
 ### Essential Methods
 
 ### Securing Reactive application
