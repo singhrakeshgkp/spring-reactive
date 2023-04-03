@@ -26,6 +26,26 @@
 
 
 ### Creating Subscribers Reactive-web4
+
+```
+Flux                     Subscriber
+      flux.subscribe()
+ <--------------------------------
+     onSubscribe()
+ --------------------------------->
+     subscription.request(2)
+ <---------------------------------
+     subscripiton.onNext(value)
+ --------------------------------->
+ subscripiton.onNext(value)
+ --------------------------------->
+     s.onSomplete
+---------------------------------->
+
+ onError()-if excep thrown by flux
+---------------------------------->
+  
+```
 - Mono and Flux are Publishers
   ```
   Mono & Flux <------Subscription------Subscriber
