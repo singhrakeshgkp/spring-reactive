@@ -83,7 +83,7 @@ Flux                     Subscriber
   ```
 - ```flux.log``` -> To print all the action happing under hood
   ```
-  .subscribe(ele-> System.out.println(ele)) -> this lines doesn't request data from publisher aslo its not back pressure. It simply say give me whatever you have.
+  .subscribe(ele-> System.out.println(ele)) -> this lines doesn't request data from publisher aslo it doen't uses backpresure. It simply say give me whatever you have.
   ```
   
 ### Essential Methods
