@@ -42,6 +42,10 @@
     ```
     .subscribe(ele-> System.out.println("subs"+ele));
     ```
+  - In order to get the data subscriber have to request the value form publisher see method ```msg2```
+    ```
+    subscription.request(1); Here subscriber request for 1 element at a time, subscriber can request multiple element, this is also known as back pressure.
+    ```
 
 ### Creating Custom Publishers
 
