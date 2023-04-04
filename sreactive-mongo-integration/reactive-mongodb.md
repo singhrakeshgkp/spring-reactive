@@ -5,8 +5,15 @@
   - Create Reservation.java, SampleDataInitializer.java(it will save the data in db)
   - Run mongo db server
   - Run your application, data should be saved in mongodb
- ##### Expose reactive style endpoints
+ ### Expose reactive style endpoints
  - create an ```HttpConfiguration.java``` class 
+
+### Send Message to cleint via websocket
  - configure websocket -> Read advantage about websocket
  - create Greeting Producer, request and response java classess
- - Create websocket client ```ws.html``` 
+ - Create websocket client ```ws.html``
+ 
+### Building an edge service
+<p>All the devices android, iphone, web .. etc will talk to edge service and edge service will forward the request to other microservices</p>
+
+` 
