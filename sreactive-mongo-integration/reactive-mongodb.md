@@ -1,5 +1,5 @@
 
-### Setup Project
+### Setup Project 
 - Create new spring boot project with following dependency
   - Reactive web, lombok, reactive mongodb and 
   - Create Reservation.java, SampleDataInitializer.java(it will save the data in db)
@@ -30,3 +30,16 @@
 ### RSocket
 <p>is a binary protocol and support 4 message exchange pattern. single value in and single value out, single value in multiple value out, multi value in and multi value out, single value in and no value out</p>
 if you want to perform stream of data in and stream of data out, this kind of operation is much harder to perform with http.
+
+- create new controller ```RsocketGreetingsController``` in ```sreactive-mongo-integration``` application and specify the port in ```application.prop``` file
+- Now do the following things in ```sreactive-client``` application
+  - Define rsocket bean in main class
+  - Create new GreetingClient (it uses RosocketRequester not webclient)
+  - create new endpoint that stream the data(in router function).
+    ```
+    ```
+  - 
+    ```
+    
+    ```
+  - df
