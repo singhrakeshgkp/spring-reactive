@@ -36,10 +36,6 @@ if you want to perform stream of data in and stream of data out, this kind of op
   - Define rsocket bean in main class
   - Create new GreetingClient (it uses RosocketRequester not webclient)
   - create new endpoint that stream the data(in router function).
-    ```
-    ```
-  - 
-    ```
+  - run both the application and hit the ```http://localhost:8181/sse/greetings/rakesh``` endpoint
+   
     
-    ```
-  - df
