@@ -5,6 +5,9 @@
   - Create Reservation.java, SampleDataInitializer.java(it will save the data in db)
   - Run mongo db server
   - Run your application, data should be saved in mongodb
+ ### Expose rest style endpoints
+ - create a new class ```ReservatonsController.java``` and define a get endpoint
+ - run the application and test the ```http://localhost:8080/reservations``` end point
  ### Expose reactive style endpoints
  - create an ```HttpConfiguration.java``` class 
 
