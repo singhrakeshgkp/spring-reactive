@@ -15,5 +15,9 @@
  
 ### Building an edge service
 <p>All the devices android, iphone, web .. etc will talk to edge service and edge service will forward the request to other microservices</p>
+- Create new project sreactive-client with following dependencies
+  - lombock, reactive web. rsocket and gateway
+  - 
+- fdjk
 
 ` 
