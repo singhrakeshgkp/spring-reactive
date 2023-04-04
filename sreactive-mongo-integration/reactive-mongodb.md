@@ -1,5 +1,5 @@
 
-### Setup Project 
+### Setup Project (sreactive-mongo-integration)
 - Create new spring boot project with following dependency
   - Reactive web, lombok, reactive mongodb and 
   - Create Reservation.java, SampleDataInitializer.java(it will save the data in db)
@@ -18,7 +18,7 @@
  - create Greeting Producer, request and response java classess
  - Create websocket client ```ws.html```
  
-### Building an edge service
+### Building an edge service (setup a new project sreactive-client)
 <p>All the devices android, iphone, web .. etc will talk to edge service and edge service will forward the request to other microservices</p>
 
 - Create new project sreactive-client with following dependencies
