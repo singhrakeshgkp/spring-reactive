@@ -16,7 +16,7 @@
 ### Send Message to cleint via websocket
  - configure websocket -> Read advantage about websocket
  - create Greeting Producer, request and response java classess
- - Create websocket client ```ws.html``
+ - Create websocket client ```ws.html```
  
 ### Building an edge service
 <p>All the devices android, iphone, web .. etc will talk to edge service and edge service will forward the request to other microservices</p>
