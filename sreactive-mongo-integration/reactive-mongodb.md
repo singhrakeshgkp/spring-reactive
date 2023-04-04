@@ -8,5 +8,5 @@
  ##### Expose reactive style endpoints
  - create an ```HttpConfiguration.java``` class 
  - configure websocket -> Read advantage about websocket
- - create Greeting model, request and response java classess
- - 
+ - create Greeting Producer, request and response java classess
+ - Create websocket client ```ws.html``` 
