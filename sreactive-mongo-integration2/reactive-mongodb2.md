@@ -3,6 +3,7 @@
 ##### Create ReservationPojoTest
 ##### Create ReservationEntityTest 
 ##### RepositoryQueryTest - Persist and validate the data.
+##### ReservationHttpTest - Testing web tier
 
 
 - 
