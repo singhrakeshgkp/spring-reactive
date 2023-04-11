@@ -13,4 +13,8 @@
     private ReservationRepo repository;
   ```
   
-## Client (sreactive-mongo-inte-client)
+## Client (sreactive-client-integration)
+- Create a ```ReservationClient.java, Reservation.java``` classes
+- Create a web client bean in Spring boot main class
+- Now run the test, it will fail as its unbale to connect to localhost, localhost producer is not up. To test this in issolation we will mock it using wiremock.
+
