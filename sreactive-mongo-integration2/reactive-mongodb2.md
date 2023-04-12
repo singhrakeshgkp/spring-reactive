@@ -18,7 +18,11 @@
 - Create a web client bean in Spring boot main class
 - Now run the test, it will fail as its unbale to connect to localhost, localhost producer is not up. To test this in issolation we will mock it using wiremock.
 - Add wiremock and mock the response. Run the test this time it will pass. But if multiple team working on the same project they may have defined the attribute with different name such as ```Reservation.resName, Reservation.name``` etc. In this case test will never pass
-- To deal with the above scenario we will use client and servicer side contract.
-- Create new folder ```/resources/contract``` under test directory of producer application.
-  - Create new file ```AllReservations.groovy``` file could be yml or Pact ..etc
+- To deal with the above scenario we will use contract, and spring ```spring-cloud-contract-maven-plugin``` plugin. This plugin will breaks the build if the contract doesn't line up with our expectation about the actual api.
+  - Create new folder ```/resources/contract``` under test directory of producer application.
+  - Create new file ```AllReservations.groovy``` file, it could be yml or Pact  ..etc file format.
+  - Create new class ```BaseClass.java``` mention the same class in pom.xml file ```<baseClassForTests>com.example.BaseClass</baseClassForTests>```
+  - Build the producer project
+- Now instead of wire mock we will use ```StubRunner``` to test the client.
+- 
 
