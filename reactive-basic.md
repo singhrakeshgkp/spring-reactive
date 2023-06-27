@@ -5,7 +5,7 @@
 - https://spring.io/guides/gs/reactive-rest-service/
 - jfdf
 ## Hello world Application(Reactive-web1)
-- ref https://spring.io/guides/gs/reactive-rest-service/
+- branch 001-simple-reac-application, ref https://spring.io/guides/gs/reactive-rest-service/
 - Create a new spring boot application with spring reactive web dependency.
 - Create Handler, Router, Clients classes
 - Run the application, on console it should print ```Hello world``` or try to access ```localhost:8080/hello-world``` url, it should return the ```hello world``` msg back in response.
