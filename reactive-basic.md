@@ -33,10 +33,8 @@
 
 ### Error Handling
 
-
-#### Handling Error 
 - Approach 1 ->
-  - Go to WebClientConfig.java class (reactive-web3) and append below code
+  - Go to CustomerProxy.java class (reactive-web2) and append below code
     ```
      .onErrorResume(WebClientException.class,e->{
                   Customer customer = new Customer("demo customer");
