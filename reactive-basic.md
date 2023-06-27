@@ -6,14 +6,14 @@
 ## Docs
 - https://spring.io/guides/gs/reactive-rest-service/
 - jfdf
-## Hello world Application(Reactive-web1)
-- branch 001-simple-reac-application, ref https://spring.io/guides/gs/reactive-rest-service/
+## Hello world Application
+- Proj = ```reactive-web1``` branch = ```001-simple-reac-application```, ref https://spring.io/guides/gs/reactive-rest-service/
 - Create a new spring boot application with spring reactive web dependency.
 - Create Handler, Router, Clients classes
 - Run the application, on console it should print ```Hello world``` or try to access ```localhost:8080/hello-world``` url, it should return the ```hello world``` msg back in response.
 
 ## Flux
-- Branch ```002-flux```
+- Proj = ```reactive-web1``` Branch ```002-flux```
 - Create Customer Model, CustomerService, CustomerHandler, CustomerHandlerImpl and CustomerRouterConfig class.
 - Run the application. hit ```http://localhost:8080/customers``` get url you will observe data will be comming as stream.
 - Test it using Chrome (it will only work with supported reactive client, as such postman is not supporting)
