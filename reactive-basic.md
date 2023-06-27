@@ -1,6 +1,7 @@
 # Table of contents
 - [Docs](#docs)
 - [Hello world Application](#hello-world-application)
+- [Flux](#Flux)
 ## Docs
 - https://spring.io/guides/gs/reactive-rest-service/
 - jfdf
@@ -9,7 +10,10 @@
 - Create a new spring boot application with spring reactive web dependency.
 - Create Handler, Router, Clients classes
 - Run the application, on console it should print ```Hello world``` or try to access ```localhost:8080/hello-world``` url, it should return the ```hello world``` msg back in response.
-- 
+
+## Flux
+- Create Customer Model, CustomerService, CustomerHandler, CustomerHandlerImpl and CustomerRouterConfig class.
+- Run the application. hit ```http://localhost:8080/customers``` get url you will observe data will be comming as stream.
 
 
 ### Reactive Router (reactive-web2)
