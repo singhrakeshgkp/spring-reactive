@@ -3,6 +3,7 @@
   - [Docs](#docs)
   - [Hello world Application](#hello-world-application)
   - [Flux](#Flux)
+  - [Service Communication](#service-communication)
 ## Docs
 - https://spring.io/guides/gs/reactive-rest-service/
 - jfdf
@@ -18,12 +19,17 @@
 - Run the application. hit ```http://localhost:8080/customers``` get url you will observe data will be comming as stream.
 - Test it using Chrome (it will only work with supported reactive client, as such postman is not supporting)
 
-
+## Service Communication
+- Proj = ```reactive-web1 and reactive web2``` Branch ```003-service-communication```
+- Setup reactive web2 proj and call customer endpoint from reactive-web2 application
+- Create Customer Model, WebClientConfig, Customerproxy, CustomerService, CustomerHandler, CustomerHandlerImpl and CustomerRouterConfig class.
+- Run Both the application, and hit```localhost:8181/reactive-web2/customers``` url. reactive-web2 will call reactive-web1 and return the response.
 ### Reactive Router (reactive-web2)
 
 - Create  customer and customer service class
 - Create  ```RouterConfig``` class
-- Create CustomerHandler class and run the application. Now test it using Chrome (it will only work with supported reactive client, as such postman is not supporting)
+- Create CustomerHandler class and run the application. Now test it using Chrome (it will only work with supported reactive client, as such postman is not supporting
+- Run 
 
 
 ### Calling reactive-web2 from reactive-web3 application(router implementation)
