@@ -3,6 +3,7 @@
   - [Docs](#docs)
   - [Hello world Application](#hello-world-application)
   - [Flux](#Flux)
+    - [Testing](#Testing)
   - [Service Communication](#service-communication)
 
 
@@ -21,6 +22,7 @@
 - Create Customer Model, CustomerService, CustomerHandler, CustomerHandlerImpl and CustomerRouterConfig class.
 - Run the application. hit ```http://localhost:8080/customers``` get url you will observe data will be comming as stream.
 - Test it using Chrome (it will only work with supported reactive client, as such postman is not supporting)
+### Testing
 
 ## Service Communication
 - Proj = ```reactive-web1 and reactive web2``` Branch ```003-service-communication```
