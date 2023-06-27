@@ -33,6 +33,7 @@
 
 ### Error Handling
 
+- Proj = ```reactive-web2``` Branch ```003-error-handling```
 - Approach 1 ->
   - Go to CustomerProxy.java class (reactive-web2) and append below code
     ```
