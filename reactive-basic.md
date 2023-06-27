@@ -5,6 +5,7 @@
   - [Flux](#Flux)
     - [Testing](#Testing)
   - [Service Communication](#service-communication)
+    - [Error Handling](error-handling)
 
 
 # Spring Reactive Basics
@@ -29,21 +30,9 @@
 - Setup reactive web2 proj and call customer endpoint from reactive-web2 application
 - Create Customer Model, WebClientConfig, Customerproxy, CustomerService, CustomerHandler, CustomerHandlerImpl and CustomerRouterConfig class.
 - Run Both the application, and hit```localhost:8181/reactive-web2/customers``` url. reactive-web2 will call reactive-web1 and return the response.
-### Reactive Router (reactive-web2)
 
-- Create  customer and customer service class
-- Create  ```RouterConfig``` class
-- Create CustomerHandler class and run the application. Now test it using Chrome (it will only work with supported reactive client, as such postman is not supporting
-- Run 
+### Error Handling
 
-
-### Calling reactive-web2 from reactive-web3 application(router implementation)
-- Config webClient bean for reference refer ```WebClientConfig.java``` class.
-- Create ```CustomerProxy.java``` class and write the code to get the data from reactive-web2 application
-- Now consumer part is completed here.
-- Create ```CustomerService.java``` class it will uses ```Customerproxy``` to fetch the data form ```reactive-wb2``` application
-- Create Router and handler classess
-- Now run and test application
 
 #### Handling Error 
 - Approach 1 ->
