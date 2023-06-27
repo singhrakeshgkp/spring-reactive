@@ -12,8 +12,10 @@
 - Run the application, on console it should print ```Hello world``` or try to access ```localhost:8080/hello-world``` url, it should return the ```hello world``` msg back in response.
 
 ## Flux
+- Branch ```002-flux```
 - Create Customer Model, CustomerService, CustomerHandler, CustomerHandlerImpl and CustomerRouterConfig class.
 - Run the application. hit ```http://localhost:8080/customers``` get url you will observe data will be comming as stream.
+- Test it using Chrome (it will only work with supported reactive client, as such postman is not supporting)
 
 
 ### Reactive Router (reactive-web2)
