@@ -18,7 +18,10 @@ public class CustomerProxy {
     * */
     public Flux<Customer> getAllCustomer(){
       return   webClient.get().uri("/customers")
-                .exchangeToFlux(res->res.bodyToFlux(Customer.class));
-
+                .exchangeToFlux(res->res.bodyToFlux(Customer.class))
+              .onErrorResume(WebClientException.class,e->{
+                  Customer customer = new Customer("demo customer");
+                  return Flux.just(customer);
+              });
     }
 }
