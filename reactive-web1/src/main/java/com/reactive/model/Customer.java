@@ -7,14 +7,12 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Greeting {
+public class Customer {
 
-	private String msg;
+	private String name;
 	
 	
 }
