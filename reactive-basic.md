@@ -1,7 +1,8 @@
 # Table of contents
-- [Docs](#docs)
-- [Hello world Application](#hello-world-application)
-- [Flux](#Flux)
+- Spring Reactive Basics
+  - [Docs](#docs)
+  - [Hello world Application](#hello-world-application)
+  - [Flux](#Flux)
 ## Docs
 - https://spring.io/guides/gs/reactive-rest-service/
 - jfdf
