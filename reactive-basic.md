@@ -5,7 +5,7 @@
   - [Flux](#Flux)
     - [Testing](#Testing)
   - [Service Communication](#service-communication)
-    - [Error Handling](error-handling)
+    - [Error Handling](#error-handling)
 
 
 # Spring Reactive Basics
