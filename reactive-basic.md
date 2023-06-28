@@ -6,12 +6,16 @@
     - [Testing](#Testing)
   - [Service Communication](#service-communication)
     - [Error Handling](#error-handling)
+  - [Subscriber](#subscriber)
 
 
 # Spring Reactive Basics
+
 ## Docs
 - https://spring.io/guides/gs/reactive-rest-service/
-- jfdf
+- https://docs.spring.io/spring-framework/docs/5.0.x/spring-framework-reference/web-reactive.html
+- https://spring.io/blog/2016/06/13/notes-on-reactive-programming-part-ii-writing-some-code
+
 ## Hello world Application
 - Proj = ```reactive-web1``` branch = ```001-simple-reac-application```, ref https://spring.io/guides/gs/reactive-rest-service/
 - Create a new spring boot application with spring reactive web dependency.
@@ -33,7 +37,7 @@
 
 ### Error Handling
 
-- Proj = ```reactive-web2``` Branch ```003-error-handling```
+- Proj = ```reactive-web2``` Branch ```004-error-handling```
 - Approach 1 ->
   - Go to CustomerProxy.java class (reactive-web2) and append below code
     ```
@@ -45,8 +49,13 @@
 
 
 
-### Creating Subscribers Reactive-web4
+## Subscriber
 
+<p>The data wonn't start flowing until we subscribe. ```subscribe()``` method can be used to collect all the elements in a stream</p>
+<p>To make the data flow you have to subscribe to the Flux using one of the subscribe() methods.  when we  return anything from controller or we register router spring boot  automatically creates subscriber for us. </p>
+
+- Proj = ```reactive-web1``` Branch ```005-subscriber```
+- 
 ```
 Flux                     Subscriber
       flux.subscribe()
@@ -77,7 +86,7 @@ Flux                     Subscriber
     var flux = Flux.fromIterable(Set.of(2, 2, 4, 4, 3, 6, 7, 7));
     flux.doOnNext(ele-> System.out.println(ele));
     ```
-  - If you observe the output Nothing will happen as we don't have subscriber. In reactive-wb3 when we were returning from controller or we were registering router spring boot was automatically creating subscriber for us.
+  - If you observe the output Nothing will happen as we don't have subscriber. 
   - we can create the subscriber using following line.
     ```
     .subscribe(ele-> System.out.println("subs"+ele));
