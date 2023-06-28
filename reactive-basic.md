@@ -51,7 +51,7 @@
 
 ## Subscriber
 
-<p>The data wonn't start flowing until we subscribe. ```subscribe()``` method can be used to collect all the elements in a stream</p>
+<p>The data wonn't start flowing until we subscribe. subscribe() method can be used to collect all the elements in a stream</p>
 <p>To make the data flow you have to subscribe to the Flux using one of the subscribe() methods.  when we  return anything from controller or we register router spring boot  automatically creates subscriber for us. </p>
 
 - Proj = ```reactive-web1``` Branch ```005-subscriber```
