@@ -7,6 +7,7 @@
   - [Service Communication](#service-communication)
     - [Error Handling](#error-handling)
   - [Subscriber](#subscriber)
+    - [Custom Subscriber](#creating-custom-subscriber) 
 
 
 # Spring Reactive Basics
@@ -55,7 +56,13 @@
 <p>To make the data flow you have to subscribe to the Flux using one of the subscribe() methods.  when we  return anything from controller or we register router spring boot  automatically creates subscriber for us. </p>
 
 - Proj = ```reactive-web1``` Branch ```005-subscriber```
-- 
+- Create a new Controller class ```TestSubscriberController``` Controller
+  - Create ```subsriberTest1``` method with void return type. Run the application and try to access ```http://localhost:8080/subs1``` end point.This method will subscribe one stream/event and print the whole pipline process on console.
+
+### Creating custom subscriber
+- Crate a new class ```TestSubscriber``` class implementing Subscriber interface
+- Create new method ```subsriberTest2``` in ```TestSubscriberController``` write the req logic and run the application
+- Now test using ```http://localhost:8080/subs1``` endpoint
 ```
 Flux                     Subscriber
       flux.subscribe()
