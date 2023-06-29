@@ -62,7 +62,7 @@
 ### Creating custom subscriber
 - Crate a new class ```TestSubscriber``` class implementing Subscriber interface
 - Create new method ```subsriberTest2``` in ```TestSubscriberController``` write the req logic and run the application
-- Now test using ```http://localhost:8080/subs1``` endpoint
+- Now test using ```http://localhost:8080/subs2``` endpoint
 ```
 Flux                     Subscriber
       flux.subscribe()
