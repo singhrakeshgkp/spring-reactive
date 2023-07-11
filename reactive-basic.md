@@ -6,8 +6,9 @@
     - [Testing](#Testing)
   - [Service Communication](#service-communication)
     - [Error Handling](#error-handling)
-  - [Subscriber](#subscriber)
-    - [Custom Subscriber](#creating-custom-subscriber) 
+  - [Subscriber and Publisher](#subscriber-and-publisher)
+    - [Custom Subscriber](#creating-custom-subscriber)
+    - [Custom Publisher](#creating-custom-publisher)
 
 
 # Spring Reactive Basics
@@ -50,10 +51,14 @@
 
 
 
-## Subscriber
+## Subscriber And Publisher
 
 <p>The data wonn't start flowing until we subscribe. subscribe() method can be used to collect all the elements in a stream</p>
 <p>To make the data flow you have to subscribe to the Flux using one of the subscribe() methods.  when we  return anything from controller or we register router spring boot  automatically creates subscriber for us. </p>
+<p> Mono and Flux are Publishers
+
+  Mono & Flux <------Subscription------Subscriber
+</p>
 
 - Proj = ```reactive-web1``` Branch ```005-subscriber```
 - Create a new Controller class ```TestSubscriberController``` Controller
@@ -82,13 +87,6 @@ Flux                     Subscriber
 ---------------------------------->
   
 ```
-- Mono and Flux are Publishers
-  ```
-  Mono & Flux <------Subscription------Subscriber
-  ```
-- Create new spring boot application with reactive-web dependency
-- Create a controller ```TestController.java```
-  - create one endpoint msg1 and perform below operation and run the application.
     ```
     var flux = Flux.fromIterable(Set.of(2, 2, 4, 4, 3, 6, 7, 7));
     flux.doOnNext(ele-> System.out.println(ele));
@@ -98,16 +96,14 @@ Flux                     Subscriber
     ```
     .subscribe(ele-> System.out.println("subs"+ele));
     ```
-  - In order to get the data subscriber have to request the value form publisher see method ```msg2```
+  - In order to get the data subscriber have to request the value form publisher see method ```subsriberTest2```
     ```
     subscription.request(1); Here subscriber request for 1 element at a time, subscriber can request multiple element, this is also known as back pressure.
     ```
-
-### Creating Custom Publishers (reactive-web5)
-- create a ```TestPublisher.java``` class, this class should implement Publisher class.
-- Create ```TestSubscriber, TestController, and Testsubscription``` java classess.
+### Creating Custom Publisher
+- create a ```TestPublisher.java``` class, this class will implement Publisher class.
 - Now test application
-- Creating Flux publisher using create method-> recommended way to create Flux refer ```test2``` method of ```TestController.java``` class
+- Creating Flux publisher using create method-> recommended way to create Flux refer ```test-pub2``` method of ```TestPublisher.java``` class
   ```
     Flux<String> flux = Flux.create(sink->{
             for(int i =0;i<5;i++){
