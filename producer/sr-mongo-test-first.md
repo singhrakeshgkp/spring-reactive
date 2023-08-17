@@ -2,8 +2,8 @@
 - [About](#about)
 - [Project Setup](#project-setup)
 - [Writing Tests](#writing-tests)
- - [Writing Tests For Pojo](#writing-tests-for-pojo)
- - [Writing Tests For Repository](#writing-tests-for-repository)
+  - [Writing Tests For Pojo](#writing-tests-for-pojo)
+  - [Writing Tests For Repository](#writing-tests-for-repository)
   ## About
   Here we will create a project, that will follow the test first approach.
   ## Project Setup
