@@ -1,11 +1,12 @@
 # Table of contents
 - [About](#about)
-- [Project Setup](#project-setup)
+- [Producer Project Setup](#project-setup)
 - [Writing Tests](#writing-tests)
   - [Writing Tests For Pojo](#writing-tests-for-pojo)
   - [Writing Tests For Entity](#writing-tests-for-entity)
   - [Writing Tests For Repository](#writing-tests-for-repository)
   - [Writing Tests For Web Tier](#writing-tests-for-web-tier)
+- [Consumer Project Setup](#consumer-project-setup)
   ## About
   Here we will create a project, that will follow the test first approach.
   ## Project Setup
