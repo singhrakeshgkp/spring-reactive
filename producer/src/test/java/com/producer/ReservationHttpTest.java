@@ -15,7 +15,7 @@ import reactor.core.publisher.Flux;
 
 @ExtendWith(SpringExtension.class)
 @WebFluxTest(value = ReservationHttpConfiguration.class)
-/*here value = ReservationHttpConfiguration.class prop used to locad the bean as here we are
+/*here value = ReservationHttpConfiguration.class prop used to load the bean as here we are
 * performing slice testing so bean available in that class won't be loaded in the context.*/
 public class ReservationHttpTest {
 
