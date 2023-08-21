@@ -9,6 +9,8 @@
 - [Consumer Project Setup](#consumer-project-setup)
    - [Writing and executing test cases if target server is up and running](#Writing-and-executing-test-cases-if-target-server-is-up-and-running)
    - [Exeucting test in isolation with WireMock](#Exeucting-test-in-isolation-with-WireMock)
+- [Testing with Spring Cloud Contract-0008-sr-mongo-test-frst-scc](/sr-mongo-test-first-scc.md)
+ 
   ## About
   Here we will create a project, that will follow the test first approach.
   ## Project Setup
@@ -119,8 +121,5 @@
  Issue with the wiremock test is that what if producer side and client side both have different schema of the pojo, during integration code will fail.
 </p>
 
-##### Producer side changes
-- create new folder named ```contracts``` under src/test/resources directory
-- 
 
  
