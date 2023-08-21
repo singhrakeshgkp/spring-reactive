@@ -31,76 +31,74 @@
   spring reactive(sr) web, contract stub runner and lombock
   ```
 ### Writing and executing test cases if target server is up and running
-- Write the test case in ```ConsumerApplicationTests.java``` class code is given below.
+ - Write the test case in ```ConsumerApplicationTests.java``` class code is given below.
   ```
-  package com.consumer;
-
-import java.util.function.Predicate;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import reactor.test.StepVerifier;
-
-@ExtendWith(SpringExtension.class)
-@SpringBootTest
-class ConsumerApplicationTests {
-
+	package com.consumer;
+	import java.util.function.Predicate;
+	import org.junit.jupiter.api.Test;
+	import org.junit.jupiter.api.extension.ExtendWith;
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.boot.test.context.SpringBootTest;
+	import org.springframework.test.context.junit.jupiter.SpringExtension;
+	import reactor.test.StepVerifier;
+	
+	@ExtendWith(SpringExtension.class)
+	@SpringBootTest
+	class ConsumerApplicationTests {
+	
 	@Autowired
 	ReservationClient client;
 	@Test
 	void contextLoads() {
-
+	
 		StepVerifier
 				.create(this.client.getAllReservations())
 				.expectNextMatches(p("1","rakesh"))
 				.expectNextMatches(p("2","suresh"))
 				.verifyComplete();
 	}
-
+	
 	Predicate<Reservation> p (String id, String name){
 		return reservation -> reservation.getId().equalsIgnoreCase(id) && reservation.getReservationName().equalsIgnoreCase(name);
 	}
-
-}
+	
+	}
 
   ```
-- Create a reservation client class
+ - Create a reservation client class
 ```
-  package com.consumer;
+	package com.consumer;
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.stereotype.Component;
+	import org.springframework.web.reactive.function.client.WebClient;
+	import reactor.core.publisher.Flux;
+	@Component
+	public class ReservationClient {
+	
+	  private final WebClient client;
+	  ReservationClient(WebClient client){
+	    this.client = client;
+	  }
+	  Flux<Reservation>  getAllReservations(){
+	
+	    return  this.client
+	        .get()
+	        .uri("/reservation")
+	        .retrieve()
+	        .bodyToFlux(Reservation.class);
+	
+	  }
+	}
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
-@Component
-public class ReservationClient {
-
-  private final WebClient client;
-  ReservationClient(WebClient client){
-    this.client = client;
-  }
-  Flux<Reservation>  getAllReservations(){
-
-    return  this.client
-        .get()
-        .uri("/reservation")
-        .retrieve()
-        .bodyToFlux(Reservation.class);
-
-  }
-}
-
-```
-- Create a reservation pojo class
-- Create a new bean of type WebClient class in ```ConsumerApplication.java``` class
-```
-@Bean
+ ```
+ - Create a reservation pojo class
+ - Create a new bean of type WebClient class in ```ConsumerApplication.java``` class
+ ```
+        @Bean
 	WebClient client(WebClient.Builder builder){
 		return  builder
 				.baseUrl("http://localhost:8080")
 				.build();
 	}
-```
-- Execute the test if target server is up an running and record exit in the database test will be pass.
+ ```
+ - Execute the test if target server is up an running and record exit in the database test will be pass.
