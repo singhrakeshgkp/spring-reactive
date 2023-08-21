@@ -7,6 +7,8 @@
   - [Writing Tests For Repository](#writing-tests-for-repository)
   - [Writing Tests For Web Tier](#writing-tests-for-web-tier)
 - [Consumer Project Setup](#consumer-project-setup)
+   - [Writing and executing test cases if target server is up and running](#Writing-and-executing-test-cases-if-target-server-is-up-and-running)
+   - [Exeucting test in isolation with WireMock](#Exeucting-test-in-isolation-with-WireMock)
   ## About
   Here we will create a project, that will follow the test first approach.
   ## Project Setup
@@ -101,4 +103,10 @@
 				.build();
 	}
  ```
- - Execute the test if target server is up an running and record exit in the database test will be pass.
+ - Execute the test if target server is up an running and record exist in the database test will be pass.
+
+### Exeucting test in isolation with WireMock
+<p>
+ Isue with the above approach is that u can not execute the test cases if target server is not un and running.
+ 
+</p>
