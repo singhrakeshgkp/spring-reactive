@@ -110,3 +110,17 @@
  Isue with the above approach is that u can not execute the test cases if target server is not un and running.
  
 </p>
+
+- Make the required changes to configure the wire mock in the application and execute the test, this time wire mock will create fake api and allow the test to go through.
+
+### Exeucting test in isolation with WireMock + Spring Cloud Contract
+<p>
+
+ Issue with the wiremock test is that what if producer side and client side both have different schema of the pojo, during integration code will fail.
+</p>
+
+##### Producer side changes
+- create new folder named ```contracts``` under src/test/resources directory
+- 
+
+ 
