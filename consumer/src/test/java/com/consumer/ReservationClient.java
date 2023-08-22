@@ -15,7 +15,7 @@ public class ReservationClient {
 
     return  this.client
         .get()
-        .uri("/reservation")
+        .uri("/reservations")
         .retrieve()
         .bodyToFlux(Reservation.class);
 

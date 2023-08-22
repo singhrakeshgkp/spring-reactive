@@ -38,7 +38,7 @@ class ConsumerApplicationTests {
 		List<Reservation> rserList = Arrays.asList(new Reservation("1","rakesh"), new Reservation("2","suresh"));
     String json = this.mapper.writeValueAsString(rserList);
     /*wire mock step 2*/
-		WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/reservation"))
+		WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/reservations"))
 				.willReturn(WireMock.aResponse()
 						.withBody(json)
 						.withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
