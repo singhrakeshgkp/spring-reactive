@@ -16,7 +16,7 @@ public class ReservationHttpConfiguration {
   @Bean
   RouterFunction<ServerResponse> routes(ReservationRepository repository){
     return  route()
-        .GET("/reservation",
+        .GET("/reservations",
             request -> ServerResponse.ok().body(repository.findAll(),Reservation.class)).build();
 
 

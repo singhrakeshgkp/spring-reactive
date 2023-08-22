@@ -11,6 +11,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJson;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
+import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
+import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties.StubsMode;
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -20,9 +23,10 @@ import reactor.test.StepVerifier;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-/*wire mock step 1*/
-@AutoConfigureWireMock(port = 8080)
-/*WireMock step 3 autoconfigure json*/
+/*@AutoConfigureWireMock(port = 8080)*/
+@AutoConfigureStubRunner(stubsMode = StubsMode.LOCAL,
+ids = "com.producer:producer:+:8080")
+/*group id = com.produer, artificat id = producer and latest version*/
 @AutoConfigureJson
 class ConsumerApplicationTests {
 
@@ -34,25 +38,26 @@ class ConsumerApplicationTests {
 
 	@Test
 	void contextLoads() throws JsonProcessingException {
-		/*wire mock step5 creae data*/
+		/*wire mock step5 creae data*//*
 		List<Reservation> rserList = Arrays.asList(new Reservation("1","rakesh"), new Reservation("2","suresh"));
     String json = this.mapper.writeValueAsString(rserList);
-    /*wire mock step 2*/
+    *//*wire mock step 2*//*
 		WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/reservation"))
 				.willReturn(WireMock.aResponse()
 						.withBody(json)
 						.withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
 						.withStatus(HttpStatus.OK.value())
 				));
+				*/
 		StepVerifier
 				.create(this.client.getAllReservations())
 				.expectNextMatches(p("1","rakesh"))
-				.expectNextMatches(p("2","suresh"))
+				.expectNextMatches(p("2","rajesh"))
 				.verifyComplete();
 	}
 
 	Predicate<Reservation> p (String id, String name){
-		return reservation -> reservation.getId().equalsIgnoreCase(id) && reservation.getReservationName().equalsIgnoreCase(name);
+		return reservation -> reservation.getId().equalsIgnoreCase(id) && reservation.getName().equalsIgnoreCase(name);
 	}
 
 }

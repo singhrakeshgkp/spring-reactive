@@ -38,7 +38,7 @@ public class ReservationHttpTest {
             .thenReturn(Flux.just(new Reservation("1","rakesh"), new Reservation("2","rajesh")));
     /*step 4 end*/
     client.get()
-        .uri("/reservation")
+        .uri("/reservations")
         .exchange()
         .expectStatus().isOk()
         .expectHeader().contentType(MediaType.APPLICATION_JSON)

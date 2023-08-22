@@ -19,10 +19,10 @@ public class ReservationEntityTest {
 
   @Test
   public void persist(){
-    Mono<Reservation>  jane = reactiveMongoTemplate.save(new Reservation(null,"jane"));
+    Mono<Reservation>  jane = reactiveMongoTemplate.save(new Reservation(null,"rakesh"));
     StepVerifier
         .create(jane)
-        .expectNextMatches(reservation->reservation.getName().equalsIgnoreCase("jane") && reservation.getId() != null)
+        .expectNextMatches(reservation->reservation.getName().equalsIgnoreCase("rakesh") && reservation.getId() != null)
         .verifyComplete();
   }
 }
